@@ -8,7 +8,7 @@ class CryptoRepository extends BaseCryptoRepositroy {
   // endpoint
   static const String _baseUrl = 'https://min-api.cryptocompare.com';
   // number of coins return from API call per time
-  static const int _perPage = 20;
+  static const int perPage = 20;
 
   // client
   final http.Client _httpClient;
@@ -22,7 +22,7 @@ class CryptoRepository extends BaseCryptoRepositroy {
     // empty list of coins
     List<Coin> coins = [];
     String requestUrl =
-        '$_baseUrl/data/top/totalvolfull?limit=$_perPage&tsym=USD&page=$page';
+        '$_baseUrl/data/top/totalvolfull?limit=$perPage&tsym=USD&page=$page';
 
     try {
       final response = await _httpClient.get(requestUrl);
